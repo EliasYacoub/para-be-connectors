@@ -1,0 +1,30 @@
+{
+    "FlightsData":{
+        "server": "CE-SQLAPPSAG11",
+        "database": "AMS",
+        "table_name": "vwCO2PerOfficeDetails",
+        "username": "CE-SVC-DigitalTwin",
+        "password": "Jun@2020!",
+        "connection_string": "DRIVER={ODBC Driver 18 for SQL Server};SERVER=CE-SQLAPPSAG11;DATABASE=AMS;Trusted_Connection=yes;TrustServerCertificate=yes;",
+        "quiry": "SELECT SUM(Co2), COUNT(distinct TravelerName), COUNT(distinct TicketNo) FROM [Travel].[vwCO2PerOfficeDetails] WHERE (OfficeName = 'Cairo [CAIRO]' OR OfficeName = 'Cairo [EGYPT]' ) AND RequestedDate= ?",
+        "monqyery": "SELECT SUM(Co2), COUNT(distinct TravelerName), COUNT(distinct TicketNo) FROM [Travel].[vwCO2PerOfficeDetails] WHERE (OfficeName = 'Cairo [CAIRO]' OR OfficeName = 'Cairo [EGYPT]' ) AND RequestedDate between ? and ? "
+        
+    },
+    "API_URL":{
+        "url":"http://172.31.1.107:4001/api/v2/saveLatestTimeseries?tableschema=PRC"
+    },
+    "Entities":{
+          "ParaID": "7880de90-c463-11eb-b073-a7656c62f366",
+          "srckey": "Smart Village"
+    },
+    "Telemetries":{
+            "CO2imm": "FLIGHTCO2EMISS_KGCO2PERKM_CALC",
+            "travelers": "UNIQTRAVELER_NO_CALC",
+            "teckets": "UNIQTICKETS_NO_CALC",
+            "CO2immon": "FLIGHTCO2EMISSMON_KGCO2PERKM_CALC",
+            "travelersmon": "UNIQTRAVELERMON_NO_CALC",
+            "tecketsmon": "UNIQTICKETSMON_NO_CALC"
+    }
+    
+    
+}
